@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    username: root
+    password: mysql
+    url: jdbc:mysql://192.168.2.101:3306/gulimall_pms
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  # 可以在com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties.mapperLocations找到这个默认配置
+  # classpath*表示连同其他引用的jar包的类路径一块扫描
+  # classpath只扫描自己项目下的类路径即可
+  mapper-locations: classpath:/mapper/**/*.xml
+
+  # 调整mybatis全局主键id为自增，如果不在这里设置就要在实体类里的id属性上加上 @TableId(type = IdType.AUTO)
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 7003
